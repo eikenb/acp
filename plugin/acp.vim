@@ -71,7 +71,7 @@ function s:makeDefaultBehavior()
     call add(behavs[key], {
           \   'command' : "\<C-x>\<C-f>",
           \   'meets'   : 'acp#meetsForFile',
-          \   'repeat'  : 1,
+          \   'repeat'  : 0,
           \ })
   endfor
   "---------------------------------------------------------------------------
