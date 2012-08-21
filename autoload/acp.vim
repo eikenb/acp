@@ -110,41 +110,6 @@ function acp#meetsForFile(context)
 endfunction
 
 "
-function acp#meetsForPerlOmni(context)
-  return g:acp_behaviorPerlOmniLength >= 0 &&
-        \ a:context =~ '\w->\k\{' . g:acp_behaviorPerlOmniLength . ',}$'
-endfunction
-
-"
-function acp#meetsForXmlOmni(context)
-  return g:acp_behaviorXmlOmniLength >= 0 &&
-        \ a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .
-        \              g:acp_behaviorXmlOmniLength . ',}$'
-endfunction
-
-"
-function acp#meetsForHtmlOmni(context)
-  return g:acp_behaviorHtmlOmniLength >= 0 &&
-        \ a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .
-        \              g:acp_behaviorHtmlOmniLength . ',}$'
-endfunction
-
-"
-function acp#meetsForCssOmni(context)
-  if g:acp_behaviorCssOmniPropertyLength >= 0 &&
-        \ a:context =~ '\(^\s\|[;{]\)\s*\k\{' .
-        \              g:acp_behaviorCssOmniPropertyLength . ',}$'
-    return 1
-  endif
-  if g:acp_behaviorCssOmniValueLength >= 0 &&
-        \ a:context =~ '[:@!]\s*\k\{' .
-        \              g:acp_behaviorCssOmniValueLength . ',}$'
-    return 1
-  endif
-  return 0
-endfunction
-
-"
 function acp#completeSnipmate(findstart, base)
   if a:findstart
     let s:posSnipmateCompletion = len(matchstr(s:getCurrentText(), '.*\U'))
