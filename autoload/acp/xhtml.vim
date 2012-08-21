@@ -1,3 +1,6 @@
+if exists("acp_did_xhtml") | finish | endif
+let acp_did_xhtml = 1
+
 " re-use html setup
 function acp#xhtml#makeBehavior()
 	let behavs = acp#behav#defaults('xhtml')

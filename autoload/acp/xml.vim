@@ -1,3 +1,5 @@
+if exists("acp_did_xml") | finish | endif
+let acp_did_xml = 1
 "
 function acp#xml#meetsForOmni(context)
   return g:acp_behaviorXmlOmniLength >= 0 &&

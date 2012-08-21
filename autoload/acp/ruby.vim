@@ -1,3 +1,6 @@
+if exists("acp_did_ruby") | finish | endif
+let acp_did_ruby = 1
+
 function acp#ruby#meetsForOmni(context)
 	if !has('ruby')
 		return 0

@@ -1,3 +1,6 @@
+if exists("acp_did_go") | finish | endif
+let acp_did_go = 1
+
 function acp#go#meetsForOmni(context)
 	return g:acp_behaviorGoOmniLength >= 0 &&
 			\ a:context =~ '\k\.\k\{' . g:acp_behaviorGoOmniLength . ',}$'

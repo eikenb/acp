@@ -1,3 +1,5 @@
+if exists("acp_did_html") | finish | endif
+let acp_did_html = 1
 "
 function acp#html#meetsForOmni(context)
   return g:acp_behaviorHtmlOmniLength >= 0 &&

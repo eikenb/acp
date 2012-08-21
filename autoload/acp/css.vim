@@ -1,3 +1,5 @@
+if exists("acp_did_css") | finish | endif
+let acp_did_css = 1
 "
 function acp#css#meetsForOmni(context)
   if g:acp_behaviorCssOmniPropertyLength >= 0 &&

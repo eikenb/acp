@@ -1,3 +1,5 @@
+if exists("acp_did_perl") | finish | endif
+let acp_did_perl = 1
 "
 function acp#perl#meetsForOmni(context)
   return g:acp_behaviorPerlOmniLength >= 0 &&

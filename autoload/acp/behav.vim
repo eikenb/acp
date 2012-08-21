@@ -1,3 +1,5 @@
+if exists("acp_did_behav") | finish | endif
+let acp_did_behav = 1
 
 function acp#behav#defaults(key)
 	let behavs = { a:key : [] }
