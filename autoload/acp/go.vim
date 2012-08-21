@@ -1,6 +1,6 @@
 function acp#go#meetsForOmni(context)
-	let s:min_len_for_omni = 0
-	return a:context =~ '\k\.\k\{' . s:min_len_for_omni . ',}$'
+	return g:acp_behaviorGoOmniLength >= 0 &&
+			\ a:context =~ '\k\.\k\{' . g:acp_behaviorGoOmniLength . ',}$'
 endfunction
 
 function acp#go#makeBehavior()
