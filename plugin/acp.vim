@@ -29,7 +29,6 @@ function s:makeDefaultBehavior()
   let behavs = {
         \   '*'      : [],
         \   'ruby'   : [],
-        \   'python' : [],
         \   'perl'   : [],
         \   'xml'    : [],
         \   'html'   : [],
@@ -78,12 +77,6 @@ function s:makeDefaultBehavior()
   call add(behavs.ruby, {
         \   'command' : "\<C-x>\<C-o>",
         \   'meets'   : 'acp#meetsForRubyOmni',
-        \   'repeat'  : 0,
-        \ })
-  "---------------------------------------------------------------------------
-  call add(behavs.python, {
-        \   'command' : "\<C-x>\<C-o>",
-        \   'meets'   : 'acp#meetsForPythonOmni',
         \   'repeat'  : 0,
         \ })
   "---------------------------------------------------------------------------
@@ -139,7 +132,6 @@ call s:defineOption('g:acp_behaviorKeywordIgnores', [])
 call s:defineOption('g:acp_behaviorFileLength', 0)
 call s:defineOption('g:acp_behaviorRubyOmniMethodLength', 0)
 call s:defineOption('g:acp_behaviorRubyOmniSymbolLength', 1)
-call s:defineOption('g:acp_behaviorPythonOmniLength', 0)
 call s:defineOption('g:acp_behaviorPerlOmniLength', -1)
 call s:defineOption('g:acp_behaviorXmlOmniLength', 0)
 call s:defineOption('g:acp_behaviorHtmlOmniLength', 0)

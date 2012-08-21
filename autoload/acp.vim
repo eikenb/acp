@@ -14,6 +14,13 @@ let g:loaded_autoload_acp = 1
 " GLOBAL FUNCTIONS: {{{1
 
 "
+function acp#defineOption(name, default)
+  if !exists(a:name)
+    let {a:name} = a:default
+  endif
+endfunction
+
+"
 function acp#enable()
   call acp#disable()
 
@@ -118,12 +125,6 @@ function acp#meetsForRubyOmni(context)
     return 1
   endif
   return 0
-endfunction
-
-"
-function acp#meetsForPythonOmni(context)
-  return has('python') && g:acp_behaviorPythonOmniLength >= 0 &&
-        \ a:context =~ '\k\.\k\{' . g:acp_behaviorPythonOmniLength . ',}$'
 endfunction
 
 "
