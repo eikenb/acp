@@ -110,24 +110,6 @@ function acp#meetsForFile(context)
 endfunction
 
 "
-function acp#meetsForRubyOmni(context)
-  if !has('ruby')
-    return 0
-  endif
-  if g:acp_behaviorRubyOmniMethodLength >= 0 &&
-        \ a:context =~ '[^. \t]\(\.\|::\)\k\{' .
-        \              g:acp_behaviorRubyOmniMethodLength . ',}$'
-    return 1
-  endif
-  if g:acp_behaviorRubyOmniSymbolLength >= 0 &&
-        \ a:context =~ '\(^\|[^:]\):\k\{' .
-        \              g:acp_behaviorRubyOmniSymbolLength . ',}$'
-    return 1
-  endif
-  return 0
-endfunction
-
-"
 function acp#meetsForPerlOmni(context)
   return g:acp_behaviorPerlOmniLength >= 0 &&
         \ a:context =~ '\w->\k\{' . g:acp_behaviorPerlOmniLength . ',}$'
