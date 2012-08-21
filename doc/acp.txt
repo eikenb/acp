@@ -101,6 +101,15 @@ AutoComplPop supports perl-completion.vim
 To enable auto-popup for this completion, set |g:acp_behaviorPerlOmniLength|
 option to 0 or more.
 
+                                                               *acp-go-omni*
+Go Omni-Completion ~
+
+AutoComplPop supports go-completion.vim
+(https://github.com/nsf/gocode).
+
+To enable auto-popup for this completion, set |g:acp_behaviorGoOmniLength|
+option to 0 or more.
+
 
 ==============================================================================
 COMMANDS                                                        *acp-commands*
