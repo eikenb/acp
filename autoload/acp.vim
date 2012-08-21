@@ -270,31 +270,6 @@ function s:setCompletefunc()
   endif
 endfunction
 
-"
-function s:makeSnipmateItem(key, snip)
-  if type(a:snip) == type([])
-    let descriptions = map(copy(a:snip), 'v:val[0]')
-    let snipFormatted = '[MULTI] ' . join(descriptions, ', ')
-  else
-    let snipFormatted = substitute(a:snip, '\(\n\|\s\)\+', ' ', 'g')
-  endif
-  return  {
-        \   'word': a:key,
-        \   'menu': strpart(snipFormatted, 0, 80),
-        \ }
-endfunction
-
-"
-function s:getMatchingSnipItems(base)
-  let key = a:base . "\n"
-  if !exists('s:snipItems[key]')
-    let s:snipItems[key] = items(GetSnipsInCurrentScope())
-    call filter(s:snipItems[key], 'strpart(v:val[0], 0, len(a:base)) ==? a:base')
-    call map(s:snipItems[key], 's:makeSnipmateItem(v:val[0], v:val[1])')
-  endif
-  return s:snipItems[key]
-endfunction
-
 " }}}1
 "=============================================================================
 " INITIALIZATION {{{1
