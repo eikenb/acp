@@ -1,5 +1,11 @@
-Fork of autocomplpop 2.14.1
-- http://www.vim.org/scripts/script.php?script_id=1879
-- https://bitbucket.org/ns9tks/vim-autocomplpop/
+ACP
+---
 
-Goal is to make it simpler to hack on and extend.
+ACP is a fork of autocomplpop 2.14.1. I liked the auto-completion feature and
+preferred the much simpler code of autocomplpop to neocomplcache. But it seemed
+like it was no longer supported and was structured in a monolithic way that
+made it harder to extend.
+
+So this fork is to provide continued support and to refactor the code to make
+it easier to extend.
+

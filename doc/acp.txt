@@ -1,8 +1,9 @@
 *acp.txt*       Automatically opens popup menu for completions.
 
+        Copyright (c) 2012-2012 John Eikenberry
         Copyright (c) 2007-2009 Takeshi NISHIDA
 
-AutoComplPop                                              *autocomplpop* *acp*
+ACP                                                         *acp*
 
 INTRODUCTION                    |acp-introduction|
 INSTALLATION                    |acp-installation|
@@ -95,7 +96,7 @@ consist only of uppercase characters.
                                                                *acp-perl-omni*
 Perl Omni-Completion ~
 
-AutoComplPop supports perl-completion.vim
+ACP supports perl-completion.vim
 (http://www.vim.org/scripts/script.php?script_id=2852).
 
 To enable auto-popup for this completion, set |g:acp_behaviorPerlOmniLength|
@@ -104,7 +105,7 @@ option to 0 or more.
                                                                *acp-go-omni*
 Go Omni-Completion ~
 
-AutoComplPop supports go-completion.vim
+ACP supports go-completion.vim
 (https://github.com/nsf/gocode).
 
 To enable auto-popup for this completion, set |g:acp_behaviorGoOmniLength|
@@ -311,6 +312,16 @@ SPECIAL THANKS                                                    *acp-thanks*
 ==============================================================================
 CHANGELOG                                                      *acp-changelog*
 
+1.0
+  - Added go (http://golang.org) support.
+  - Factored out all individual language support into separate files to
+    facilitate adding new languages.
+
+==============================================================================
+OLD CHANGELOG                                               *old-acp-changelog*
+
+Pre-fork autocomplpop changelog.
+
 2.14.1
   - Changed the way of auto-popup for avoiding an issue about filename
     completion.
@@ -507,6 +518,13 @@ CHANGELOG                                                      *acp-changelog*
 ==============================================================================
 ABOUT                                   *acp-about* *acp-contact* *acp-author*
 
+ACP Fork
+Author:  John Eikenberry
+Licence: MIT Licence
+URL:     https://github.com/eikenberry/acp
+
+
+AutoComplPop Information
 Author:  Takeshi NISHIDA <ns9tks@DELETE-ME.gmail.com>
 Licence: MIT Licence
 URL:     http://www.vim.org/scripts/script.php?script_id=1879
