@@ -8,17 +8,13 @@ let acp_did_snipmate = 1
 
 " Called to add snipmate indefaults
 function acp#snipmate#getBehavior(key)
-	if g:acp_behaviorSnipmateLength >= 0
-		"-----------------------------------------------------------------------
-		return {
-					\   'command'      : "\<C-x>\<C-u>",
-					\   'completefunc' : 'acp#snipmate#completeSnipmate',
-					\   'meets'        : 'acp#snipmate#meetsForSnipmate',
-					\   'onPopupClose' : 'acp#snipmate#onPopupCloseSnipmate',
-					\   'repeat'       : 0,
-					\ }
-	endif
-	return {}
+	return {
+				\   'command'      : "\<C-x>\<C-u>",
+				\   'completefunc' : 'acp#snipmate#completeSnipmate',
+				\   'meets'        : 'acp#snipmate#meetsForSnipmate',
+				\   'onPopupClose' : 'acp#snipmate#onPopupCloseSnipmate',
+				\   'repeat'       : 0,
+				\ }
 endfunction
 
 "
