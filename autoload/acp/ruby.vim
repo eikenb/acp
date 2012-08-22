@@ -22,10 +22,9 @@ function acp#ruby#makeBehavior()
 	let behavs = acp#getDefaults('ruby')
 	"---------------------------------------------------------------------------
 	call add(behavs.ruby, {
-				\   'command' : "\<C-x>\<C-o>",
-				\   'meets'   : 'acp#ruby#meetsForOmni',
-				\   'repeat'  : 0,
+				\ 'command' : "\<C-x>\<C-o>",
+				\ 'meets'   : 'acp#ruby#meetsForOmni',
+				\ 'repeat'  : 0,
 				\ })
 	return behavs
 endfunction
-
