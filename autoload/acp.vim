@@ -280,7 +280,6 @@ let s:lockCount = 0
 let s:behavsCurrent = []
 let s:iBehavs = 0
 let s:tempOptionSet = [{}, {}]
-let s:snipItems = {}
 
 " }}}1
 "=============================================================================
