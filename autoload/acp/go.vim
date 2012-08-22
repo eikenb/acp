@@ -7,7 +7,6 @@ function acp#go#meetsForOmni(context)
 endfunction
 
 function acp#go#makeBehavior()
-	"let behavs = { 'go' : [] }
 	let behavs = acp#behav#defaults('go')
 	"---------------------------------------------------------------------------
 	call add(behavs.go, {
