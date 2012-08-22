@@ -7,7 +7,7 @@ function acp#perl#meetsForOmni(context)
 endfunction
 
 function acp#perl#makeBehavior()
-	let behavs = acp#behav#defaults('perl')
+	let behavs = acp#getDefaults('perl')
 	"---------------------------------------------------------------------------
 	call add(behavs.perl, {
 				\   'command' : "\<C-x>\<C-o>",

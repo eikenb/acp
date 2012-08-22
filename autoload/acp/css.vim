@@ -16,7 +16,7 @@ function acp#css#meetsForOmni(context)
 endfunction
 
 function acp#css#makeBehavior()
-	let behavs = acp#behav#defaults('css')
+	let behavs = acp#getDefaults('css')
 	"---------------------------------------------------------------------------
 	call add(behavs.css, {
 				\   'command' : "\<C-x>\<C-o>",

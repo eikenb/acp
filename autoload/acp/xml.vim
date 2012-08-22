@@ -8,7 +8,7 @@ function acp#xml#meetsForOmni(context)
 endfunction
 
 function acp#xml#makeBehavior()
-	let behavs = acp#behav#defaults('xml')
+	let behavs = acp#getDefaults('xml')
 	"---------------------------------------------------------------------------
 	call add(behavs.xml, {
 				\   'command' : "\<C-x>\<C-o>",

@@ -7,7 +7,7 @@ function acp#python#meetsForOmni(context)
 endfunction
 
 function acp#python#makeBehavior()
-	let behavs = acp#behav#defaults('python')
+	let behavs = acp#getDefaults('python')
 	"---------------------------------------------------------------------------
 	call add(behavs.python, {
 				\   'command' : "\<C-x>\<C-o>",

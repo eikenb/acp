@@ -8,7 +8,7 @@ function acp#html#meetsForOmni(context)
 endfunction
 
 function acp#html#makeBehavior()
-	let behavs = acp#behav#defaults('html')
+	let behavs = acp#getDefaults('html')
 	"---------------------------------------------------------------------------
 	call add(behavs.html, {
 				\   'command' : "\<C-x>\<C-o>",

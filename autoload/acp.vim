@@ -11,6 +11,72 @@ let g:loaded_autoload_acp = 1
 
 " }}}1
 "=============================================================================
+" Default Behaviors: {{{1
+
+function acp#getDefaults(key)
+	let behavs = { a:key : [] }
+	"---------------------------------------------------------------------------
+	call add(behavs[a:key], acp#snipmate#getBehavior(a:key))
+	"---------------------------------------------------------------------------
+	if !empty(g:acp_behaviorUserDefinedFunction) &&
+				\ !empty(g:acp_behaviorUserDefinedMeets)
+		call add(behavs[a:key], {
+					\   'command'      : "\<C-x>\<C-u>",
+					\   'completefunc' : g:acp_behaviorUserDefinedFunction,
+					\   'meets'        : g:acp_behaviorUserDefinedMeets,
+					\   'repeat'       : 0,
+					\ })
+	endif
+	"---------------------------------------------------------------------------
+	call add(behavs[a:key], {
+				\   'command' : g:acp_behaviorKeywordCommand,
+				\   'meets'   : 'acp#meetsForKeyword',
+				\   'repeat'  : 0,
+				\ })
+	"---------------------------------------------------------------------------
+	call add(behavs[a:key], {
+				\   'command' : "\<C-x>\<C-f>",
+				\   'meets'   : 'acp#meetsForFile',
+				\   'repeat'  : 0,
+				\ })
+	return behavs
+endfunction
+
+"
+function acp#meetsForKeyword(context)
+  if g:acp_behaviorKeywordLength < 0
+    return 0
+  endif
+  let matches = matchlist(a:context, '\(\k\{' . g:acp_behaviorKeywordLength . ',}\)$')
+  if empty(matches)
+    return 0
+  endif
+  for ignore in g:acp_behaviorKeywordIgnores
+    if stridx(ignore, matches[1]) == 0
+      return 0
+    endif
+  endfor
+  return 1
+endfunction
+
+"
+function acp#meetsForFile(context)
+  if g:acp_behaviorFileLength < 0
+    return 0
+  endif
+  if has('win32') || has('win64')
+    let separator = '[/\\]'
+  else
+    let separator = '\/'
+  endif
+  if a:context !~ '\f' . separator . '\f\{' . g:acp_behaviorFileLength . ',}$'
+    return 0
+  endif
+  return a:context !~ '[*/\\][/\\]\f*$\|[^[:print:]]\f*$'
+endfunction
+
+" }}}1"
+"=============================================================================
 " GLOBAL FUNCTIONS: {{{1
 
 "

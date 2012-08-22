@@ -26,7 +26,7 @@ endfunction
 
 "
 function s:makeDefaultBehavior()
-  let behavs = acp#behav#defaults('*')
+  let behavs = acp#getDefaults('*')
   return behavs
 endfunction
 

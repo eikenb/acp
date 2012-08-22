@@ -19,7 +19,7 @@ function acp#ruby#meetsForOmni(context)
 endfunction
 
 function acp#ruby#makeBehavior()
-	let behavs = acp#behav#defaults('ruby')
+	let behavs = acp#getDefaults('ruby')
 	"---------------------------------------------------------------------------
 	call add(behavs.ruby, {
 				\   'command' : "\<C-x>\<C-o>",
