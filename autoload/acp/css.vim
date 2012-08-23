@@ -1,6 +1,9 @@
 if exists("acp_did_css") | finish | endif
 let acp_did_css = 1
 
+" This meets function is a bit different than the others. It makes 2 checks
+" and explicitly returns the 1/0 boolean. It also uses 2 variables. Other than
+" that it works just like the others.
 function acp#css#meetsForOmni(context)
 	if g:acp_behaviorCssOmniPropertyLength >= 0 &&
 				\ a:context =~ '\(^\s\|[;{]\)\s*\k\{' .
